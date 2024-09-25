@@ -16,42 +16,26 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-                'name' => 'Electronics',
-                'slug' => 'electronics',
+                'name' => 'Chicks',
+                'slug' => 'chicks',
                 'image' => '',
-                'description' => 'smartphones, laptops, tablets, and other electronic devices',
+                'description' => '1-7 Days Old chicks',
                 'status' =>'1'
 
             ],
             [
-                'name' => 'Fashion & Apparel',
-                'slug' => 'fashion-&-apparel',
+                'name' => 'Broilers',
+                'slug' => 'broilers',
                 'image' => '',
-                'description' => 'Clothing, shoes, accessories, and fashion-related items',
+                'description' => 'broilers',
                 'status' =>'1'
 
             ],
             [
-                'name' => 'Home & Kitchen',
-                'slug' => 'home-&-kitchen',
+                'name' => 'Layers',
+                'slug' => 'layers',
                 'image' => '',
-                'description' => 'kitchen gadgets, home decor items, and appliances',
-                'status' =>'1'
-
-            ],
-            [
-                'name' => 'Sports & Fitness',
-                'slug' => 'sports-&-fitness',
-                'image' => '',
-                'description' => 'Exercise equipment, sports gear, and fitness accessories are common eCommerce products',
-                'status' =>'1'
-
-            ],
-            [
-                'name' => 'Appliances',
-                'slug' => 'appliances',
-                'image' => '',
-                'description' => 'Appliances',
+                'description' => 'layers',
                 'status' =>'1'
 
             ],

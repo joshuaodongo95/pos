@@ -49,7 +49,6 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/orders',OrderController::class);
     #Profile
     Route::get('/profile',[ProfileController::class, 'index']);
-
     #Pos
     Route::get('/pos',[PosController::class, 'index']);
     Route::get('/pos/orders',[PosController::class, 'orders']);

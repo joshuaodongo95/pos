@@ -29,9 +29,6 @@
 					<li class="nav-item" role="presentation">
 						<button class="nav-link" id="package-tab" data-bs-toggle="tab" data-bs-target="#package-tab-pane" type="button" role="tab" aria-controls="package-tab-pane" aria-selected="false" >Package Details</button>
 					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="sku-tab" data-bs-toggle="tab" data-bs-target="#sku-tab-pane" type="button" role="tab" aria-controls="sku-tab-pane" aria-selected="false" >SKU</button>
-					</li>
 				</ul>
 				<div class="tab-content" id="myTabContent">
 					<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
@@ -62,16 +59,6 @@
 										@error('selling_price')<small class="text-danger">{{$message}}</small>@enderror
 									</div>
 									<div class="col-md-6 mb-3">
-										<label class="form-label">Product Brand <span class="text-danger">*</span></label>
-										<select name="brand" class="form-select" >
-											<option value="">Select Product Brand</option>
-											@foreach ($brands as $brand)
-												<option value="{{ $brand->id }}">{{$brand->name}}</option>
-											@endforeach  
-										</select>
-										@error('brand')<small class="text-danger">{{$message}}</small>@enderror
-									</div>
-									<div class="col-md-6 mb-3">
 										<label class="form-label">Category <span class="text-danger">*</span></label>
 										<select name="category" class="form-select" >
 											<option value="">Select Category</option>
@@ -82,7 +69,8 @@
 										@error('category')<small class="text-danger">{{$message}}</small>@enderror
 									</div>	
 									<div class="col-md-6 mb-3">
-										<label for="status" class="form-label">Active Status</label>
+										<label for="status" class="form-label">Status</label>
+										<br>
 										<input type = "checkbox" name="status" class="form-check-input"  value="{{ old('status') }}" checked value="1"  />
 									</div>
 								</div>
@@ -125,16 +113,6 @@
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-pane fade" id="sku-tab-pane" role="tabpanel" aria-labelledby="sku-tab" tabindex="0">
-						<div>
-							</br>
-						</div>
-						<div class="card mb-4">
-							<div class="card-body">
-								<livewire:product.product-sku />
 							</div>
 						</div>
 					</div>

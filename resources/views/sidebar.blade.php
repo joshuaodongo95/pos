@@ -29,12 +29,6 @@
 							<span class="menu-text">Products</span>
 						</a>
 					</div>
-					<div class="menu-item ">
-						<a href="{{ url('/skus') }}" class="menu-link">
-							<span class="menu-icon"><i class="fa fa-th-list"></i></span>
-							<span class="menu-text">SKUS</span>
-						</a>
-					</div>
                     <div class="menu-item">
 						<a href="{{ url('/orders') }}" class="menu-link">
 							<span class="menu-icon"><i class="fa fa-bars"></i></span>

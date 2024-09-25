@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sku;
 use App\Models\Product;
 use App\Models\Category;
-use App\Models\Brand;
 use App\Models\Attribute;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -34,9 +32,8 @@ class ProductController extends Controller
     public function create()
     {  
         $categories = Category::all();
-        $brands = Brand::all();
         $attributes = Attribute::all();
-        return view('products.create',compact('categories','brands','attributes'));
+        return view('products.create',compact('categories','attributes'));
     }
 
     /**
@@ -54,7 +51,6 @@ class ProductController extends Controller
         $product->name = $validated['name'];
         $product->slug = Str::slug($request->name);
         $product->description = $validated['description'];
-        $product->brand_id = $validated['brand'];
         $product->category_id = $validated['category'];
         $product->default_price = $validated['default_price'];
         $product->selling_price = $validated['selling_price'];
@@ -69,18 +65,6 @@ class ProductController extends Controller
         }
         
         $product->save();
-
-        
-        $sku->product_id = $product->id;
-        $sku->code = $request->sku_code;
-        $sku->price = $request->sku_price;
-        $sku->stock = $request->sku_quantity;
-        $sku->save();
-
-        $sku->attributeOptions()->sync($request->options,[]);
-      
-
-
 
         return redirect('/products')->with('success','Product added successfully!');
     }
@@ -104,7 +88,6 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        $brands    =  Brand::all();
         $categories = Category::all();
 
         return view('products.edit',compact('product','brands','categories'));
@@ -125,7 +108,6 @@ class ProductController extends Controller
         if($product){
 
             $product->category_id = $validated['category'];
-            $product->brand_id    = $validated['brand'];
             $product->name = $validated['name'];
             $product->slug = Str::slug($request->name);
             $product->description = $validated['description'];

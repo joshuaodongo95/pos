@@ -4,8 +4,6 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PosController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\SkuController;
-use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AttributeController;
@@ -45,16 +43,10 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/roles',RoleController::class);
     #Categories
     Route::resource('/categories',CategoryController::class);
-    #Brands
-    Route::resource('/brands',BrandController::class);
     #Products
     Route::resource('/products',ProductController::class);
     #orders
     Route::resource('/orders',OrderController::class);
-    #SKU
-    Route::resource('/skus',SkuController::class);
-    #Attributes
-    Route::get('/attributes',[AttributeController::class, 'index']);
     #Profile
     Route::get('/profile',[ProfileController::class, 'index']);
 

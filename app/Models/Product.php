@@ -17,7 +17,6 @@ class Product extends Model
         'description',
         'default_price',
         'selling_price',
-        'brand_id',
         'category_id',
         'quantity',
         'weight',
